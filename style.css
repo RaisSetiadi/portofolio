@@ -265,11 +265,10 @@ section {
   font-size: 28px;
 }
 .about img {
-  width: 350px;
-  height: auto;
   margin-top: 50px;
-  margin-left: 130px;
   margin-bottom: 20px;
+  width: 1024;
+  height: 768;
 }
 
 .about .content ul {
