@@ -49,21 +49,66 @@ header {
   color: black;
 }
 .judul {
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(
-    245.59deg,
-    #4d9559 0%,
-    #38703d 28.53%,
-    #133917 75.52%
-  );
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.53%, #133917 75.52%);
+  display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  padding: 0 10%;
 }
+
+.judul-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.judul-text {
+  flex: 1;
+  color: white;
+}
+
+.judul-text h1 {
+  font-size: 2.5rem;
+}
+
+.cta-buttons {
+  margin-top: 1rem;
+}
+
+.cta-buttons a {
+  text-decoration: none;
+  color: white;
+  background: #ffcc00;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.judul-image {
+  perspective: 1000px; /* Memberikan efek 3D */
+}
+
+.judul-image img {
+  width: 350px; /* Ukuran gambar lebih besar */
+  height: 400px; /* Ukuran gambar lebih besar */
+  border-radius: 10px;
+  object-fit: cover;
+  transform: rotateY(10deg); /* Memberikan sedikit efek miring */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  margin-left: 20px; /* Memberikan jarak antara gambar dan teks */
+  margin-right: 20px; /* Jarak kanan juga bisa ditambahkan jika perlu */
+}
+
+.judul-image img:hover {
+  transform: rotateY(0); /* Efek hover agar kembali lurus */
+}
+
 .hero-img img {
   width: 350px;
   height: auto;
@@ -84,19 +129,20 @@ section {
   font-size: 60px;
   line-height: 1;
   color: white;
-  margin: 0 0 45px;
+  margin: 0 0 5px;
 }
 .judul-text h4 {
   font-size: 18px;
   font-weight: 600;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .judul p {
   font-size: 15px;
   color: white;
   line-height: 1.9;
   margin-bottom: 40px;
+  font-family: 'Times New Roman', Times, serif;
 }
 .judul-text a {
   text-decoration: none;
@@ -256,111 +302,129 @@ section {
     height: auto;
   }
 }
+.about {
+  padding: 80px 0;
+  background-color: #f5f5f5; /* Memberikan latar belakang ringan */
+}
+
 .about .content h3 {
   font-weight: 700;
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 40px;
-  font-family: "Abril Fatface", serif;
-  font-size: 28px;
+  margin-bottom: 30px;
+  font-family: 'Abril Fatface', serif;
+  font-size: 32px;
+  color: #333; /* Warna teks gelap agar lebih mudah dibaca */
 }
+
+.about .content p {
+  text-align: justify; /* Agar teks lebih mudah dibaca */
+}
+
 .about img {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  width: 1024;
-  height: 768;
+  border-radius: 50%; /* Membuat foto bulat */
+  width: 300px; /* Memperbesar ukuran gambar */
+  height: 300px; /* Memperbesar ukuran gambar */
+  object-fit: cover;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Memberikan efek shadow */
+  margin-left: auto; /* Agar gambar terpusat di kolom kiri */
+  margin-right: auto; /* Agar gambar terpusat di kolom kiri */
+  margin-top: 20px; /* Menambahkan jarak atas */
 }
 
 .about .content ul {
   list-style: none;
   padding: 0;
+  margin-top: 20px;
 }
 
 .about .content ul li {
-  padding: 0 0 8px 26px;
+  padding: 10px 0;
   position: relative;
+  font-size: 18px;
 }
 
 .about .content ul i {
   position: absolute;
   font-size: 20px;
-  font-family: "Limelight", sans-serif;
   left: 0;
-  top: -3px;
+  top: 2px;
   color: #ffc451;
 }
 
-.about .content p:last-child {
-  margin-bottom: 0;
-}
-.services .section-title h2 {
-  font-family: "Abril Fatface", serif;
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 50px;
-  text-align: center;
-}
-.services .section-title p {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 20px;
-  text-align: center;
-  color: #282829;
-}
-.services .icon-box {
-  text-align: center;
-  border: 1px solid #ebebeb;
-  padding: 80px 20px;
-  transition: all ease-in-out 0.3s;
-  background: #fff;
+.proyek {
+  margin-top: 40px;
 }
 
-.services .icon-box .icon {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  background: #ffc451;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: 0.3s;
-}
-
-.services .icon-box .icon i {
-  color: #151515;
-  font-size: 28px;
-  transition: ease-in-out 0.3s;
-}
-
-.services .icon-box h4 {
-  font-weight: 700;
-  margin-bottom: 15px;
+.proyek h4 {
   font-size: 24px;
+  font-weight: 600;
+  color: #333;
 }
 
-.services .icon-box h4 a {
-  color: #151515;
-  transition: ease-in-out 0.3s;
+.proyek p {
+  font-size: 16px;
+  color: #666;
 }
 
-.services .icon-box h4 a:hover {
-  color: #ffc451;
+@media (max-width: 768px) {
+  .about .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .about img {
+    width: 1750px; /* Menyesuaikan ukuran gambar di perangkat mobile */
+    height: 200px; /* Menyesuaikan ukuran gambar di perangkat mobile */
+  }
+}
+.services {
+  padding: 60px 0;
+  background: linear-gradient(to right, #1e1e1e, #ffd700);
+  color: white;
 }
 
-.services .icon-box p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
+.section-title h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
 }
 
-.services .icon-box:hover {
-  border-color: #fff;
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-  transform: translateY(-10px);
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.skill-item i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  display: block;
+  color: #1e1e1e;
+}
+
+.skill-item h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.skill-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 .contact .section-header h2 {
   font-family: "Abril Fatface", serif;
@@ -539,7 +603,6 @@ section {
   margin-bottom: 20px;
   color: #45505b;
 }
-
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
@@ -597,3 +660,93 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+/* projek  */
+#projek {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+#projek .section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.projek-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 15px;
+}
+
+.projek-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.projek-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.projek-item:hover img {
+  transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+.projek-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.projek-item:hover .projek-info {
+  opacity: 1;
+}
+
+.projek-info h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.projek-info p {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .projek-info h4 {
+    font-size: 20px;
+  }
+
+  .projek-info p {
+    font-size: 14px;
+  }
+}
+.sub-judul {
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: red;
+  margin: 30px 0 20px; /* margin atas 30px, bawah 20px */
+  font-weight: bold; /* Menonjolkan teks */
+}
+
+
+
+
+
+
+/* end projek */
